@@ -1,7 +1,10 @@
 package fr.xebia.mowitnow.automaticmower.tools.helper;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Classe qui gère les logs
@@ -10,15 +13,15 @@ import java.io.IOException;
  *
  */
 public final class MowerLogger {
-	
+
 	/**
 	 * Instance du logger
 	 */
 	private static final MowerLogger instance = new MowerLogger();
 	private static final File file = new File("log.txt");
 
-	private MowerLogger(){
-		if(!file.exists()){
+	private MowerLogger() {
+		if (!file.exists()) {
 			try {
 				file.createNewFile();
 			} catch (IOException e) {
@@ -29,5 +32,15 @@ public final class MowerLogger {
 
 	public static MowerLogger getInstance() {
 		return instance;
+	}
+
+	public static void addTextLog(String text) {
+		try (FileWriter fw = new FileWriter(file);
+				BufferedWriter bw = new BufferedWriter(fw);
+				PrintWriter out = new PrintWriter(bw)) {
+			out.println(text);
+		} catch (IOException e) {
+			System.out.println("Une erreur dans le systeme de log");
+		}
 	}
 }
