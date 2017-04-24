@@ -1,6 +1,7 @@
 package fr.xebia.mowitnow.automaticmower.tools.utils;
 
 import java.util.List;
+import java.util.Queue;
 
 import fr.xebia.mowitnow.automaticmower.domain.Mower;
 
@@ -16,7 +17,7 @@ public final class ExtractMower {
 	}
 
 	//Récuperation de la liste des 
-	public static final List<Mower> getMowerList(String filePath) {
+	public static final Queue<Mower> getMowerList(Queue<String> list) {
 	
 
 	}
