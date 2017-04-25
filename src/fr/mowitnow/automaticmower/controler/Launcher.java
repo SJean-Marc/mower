@@ -34,9 +34,7 @@ public final class Launcher {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Merci de saisir le chemin vers le fichier:");
 		String path = null;
-		while (sc.hasNextLine()) {
-			path = sc.nextLine();
-		}
+		path = sc.nextLine();
 
 		/* Vérifie que le fichier est correcte,si oui demarre le processus */
 		if (StringUtils.isNotBlank(path)) {

@@ -18,9 +18,14 @@ public final class MowerLogger {
 	 * Instance du logger
 	 */
 	private static final MowerLogger instance = new MowerLogger();
-	private static final File file = new File("log.txt");
+	private static File file;
 
+	/**
+	 * Constructeur
+	 */
 	private MowerLogger() {
+		file = new File("log.txt");
+		
 		if (!file.exists()) {
 			try {
 				file.createNewFile();
@@ -30,10 +35,21 @@ public final class MowerLogger {
 		}
 	}
 
+	/**
+	 * Récuperation de l'unique instance du fichier
+	 * 
+	 * @return
+	 */
 	public static MowerLogger getInstance() {
 		return instance;
 	}
 
+	/**
+	 * Ajout du texte dans le log
+	 * 
+	 * @param text
+	 *            le texte à ajouter
+	 */
 	public static void addTextLog(String text) {
 		try (FileWriter fw = new FileWriter(file);
 				BufferedWriter bw = new BufferedWriter(fw);
