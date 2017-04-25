@@ -19,7 +19,7 @@ public final class ExtractMower {
 	 * Constructeur
 	 */
 	private ExtractMower() {
-		// ne rien faire 
+		// ne rien faire
 	}
 
 	/**
@@ -43,6 +43,14 @@ public final class ExtractMower {
 
 	}
 
+	/**
+	 * Définit les dimensions de la surface.
+	 * 
+	 * @param list
+	 *            liste des lignes extraites du fichier
+	 * @param surface
+	 *            surface qui contenir les dimensions
+	 */
 	private static void setSurfaceDimensions(Queue<String> list, Surface surface) {
 		String dimension = list.poll();
 		String[] dimensionArray = dimension.split(" ");
@@ -52,6 +60,15 @@ public final class ExtractMower {
 		surface.setMaxPosY(posY);
 	}
 
+	/**
+	 * Définit la liste des tondeuses sur la surface
+	 * 
+	 * @param list
+	 *            liste des lignes extraites du fichier
+	 * @param surface
+	 *            surface qui contenir les dimensions
+	 * @throws Exception
+	 */
 	private static void setMowerList(Queue<String> list, Surface surface) throws Exception {
 
 		while (!list.isEmpty()) {

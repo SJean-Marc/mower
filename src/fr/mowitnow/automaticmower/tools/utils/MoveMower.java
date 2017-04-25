@@ -7,8 +7,32 @@ import fr.mowitnow.automaticmower.domain.Surface;
 import fr.mowitnow.automaticmower.domain.enums.CardinalNotationEnum;
 import fr.mowitnow.automaticmower.domain.enums.MovementEnum;
 
+/**
+ * Classe utilitaire pour deplacer une tondeuse sur la surface.
+ * 
+ * @author JM
+ *
+ */
 public final class MoveMower {
 
+	/**
+	 * Constructeur
+	 */
+	private MoveMower() {
+		// ne rien faire
+	}
+
+	/**
+	 * Déplace une tondeuse sur une surface.
+	 * 
+	 * @param surface
+	 *            surface contenant liste des tondeuses
+	 * @param mower
+	 *            la tondeuse que l'on souhaite deplacer
+	 * @param movement
+	 *            rotation que l'on souhaite réaliser
+	 * @throws Exception
+	 */
 	public static void moveMower(Surface surface, Mower mower, MovementEnum movement) throws Exception {
 		// Vérification de l'existence du terrain
 		if (surface == null) {
@@ -29,6 +53,15 @@ public final class MoveMower {
 
 	}
 
+	/**
+	 * Applique une rotation.
+	 * 
+	 * @param mower
+	 *            la tondeuse que l'on souhaite deplacer
+	 * @param movement
+	 *            rotation que l'on souhaite réaliser
+	 * @throws Exception
+	 */
 	private static void applyRotation(Mower mower, MovementEnum movement) throws Exception {
 		/* Vérification sur le mouvement demandé */
 		if (movement == null) {
@@ -52,6 +85,14 @@ public final class MoveMower {
 		mower.setOrientation(newOrientation);
 	}
 
+	/**
+	 * Applique un mouvement en fonction de l'orientation de la tondeuse.
+	 * 
+	 * @param surface
+	 *            surface contenant les tondeuses
+	 * @param mower
+	 *            la tondeuse que l'on souhaite deplacer
+	 */
 	private static void applyMovement(Surface surface, Mower mower) {
 
 		if (CardinalNotationEnum.N.equals(mower.getOrientation())) {
@@ -65,6 +106,14 @@ public final class MoveMower {
 		}
 	}
 
+	/**
+	 * Déplacer une tondeuse vers l sur une surface.
+	 * 
+	 * @param surface
+	 *            surface contenant les tondeuses
+	 * @param mower
+	 *            la tondeuse que l'on souhaite deplacer
+	 */
 	private static void moveUp(Surface surface, Mower mower) {
 		int posY = mower.getPosY();
 
@@ -75,6 +124,12 @@ public final class MoveMower {
 		}
 	}
 
+	/**
+	 * Déplacer une tondeuse vers le bas sur une surface.
+	 * 
+	 * @param mower
+	 *            la tondeuse que l'on souhaite deplacer
+	 */
 	private static void moveDown(Mower mower) {
 		int posY = mower.getPosY();
 
@@ -85,6 +140,12 @@ public final class MoveMower {
 		}
 	}
 
+	/**
+	 * Déplacer une tondeuse vers la gauche sur une surface.
+	 * 
+	 * @param mower
+	 *            la tondeuse que l'on souhaite deplacer
+	 */
 	private static void moveLeft(Mower mower) {
 		int posX = mower.getPosX();
 
@@ -95,6 +156,14 @@ public final class MoveMower {
 		}
 	}
 
+	/**
+	 * Déplacer une tondeuse vers la droite sur une surface.
+	 * 
+	 * @param surface
+	 *            surface contenant les tondeuses
+	 * @param mower
+	 *            la tondeuse que l'on souhaite deplacer
+	 */
 	private static void moveRight(Surface surface, Mower mower) {
 		int posX = mower.getPosX();
 
