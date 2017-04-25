@@ -1,4 +1,4 @@
-package fr.xebia.mowitnow.automaticmower.tools.helper;
+package fr.mowitnow.automaticmower.tools.helper;
 
 import java.util.Queue;
 

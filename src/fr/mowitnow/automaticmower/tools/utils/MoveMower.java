@@ -1,15 +1,15 @@
-package fr.xebia.mowitnow.automaticmower.tools.utils;
+package fr.mowitnow.automaticmower.tools.utils;
 
 import java.util.Arrays;
 
-import fr.xebia.mowitnow.automaticmower.domain.Mower;
-import fr.xebia.mowitnow.automaticmower.domain.Surface;
-import fr.xebia.mowitnow.automaticmower.domain.enums.CardinalNotationEnum;
-import fr.xebia.mowitnow.automaticmower.domain.enums.MovementEnum;
+import fr.mowitnow.automaticmower.domain.Mower;
+import fr.mowitnow.automaticmower.domain.Surface;
+import fr.mowitnow.automaticmower.domain.enums.CardinalNotationEnum;
+import fr.mowitnow.automaticmower.domain.enums.MovementEnum;
 
 public final class MoveMower {
 
-	public void moveMower(Surface surface, Mower mower, MovementEnum movement) throws Exception {
+	public static void moveMower(Surface surface, Mower mower, MovementEnum movement) throws Exception {
 		// Vérification de l'existence du terrain
 		if (surface == null) {
 			throw new Exception("Le terrain sur lequel la tondeuse doit être déplacé est non renseigné");
@@ -29,7 +29,7 @@ public final class MoveMower {
 
 	}
 
-	public void applyRotation(Mower mower, MovementEnum movement) throws Exception {
+	private static void applyRotation(Mower mower, MovementEnum movement) throws Exception {
 		/* Vérification sur le mouvement demandé */
 		if (movement == null) {
 			throw new Exception("Le mouvement demandé n'est pas reconnu");
@@ -52,7 +52,7 @@ public final class MoveMower {
 		mower.setOrientation(newOrientation);
 	}
 
-	public void applyMovement(Surface surface, Mower mower) {
+	private static void applyMovement(Surface surface, Mower mower) {
 
 		if (CardinalNotationEnum.N.equals(mower.getOrientation())) {
 			moveUp(surface, mower);
@@ -65,7 +65,7 @@ public final class MoveMower {
 		}
 	}
 
-	private void moveUp(Surface surface, Mower mower) {
+	private static void moveUp(Surface surface, Mower mower) {
 		int posY = mower.getPosY();
 
 		if (posY == surface.getMaxPosY()) {
@@ -75,7 +75,7 @@ public final class MoveMower {
 		}
 	}
 
-	private void moveDown(Mower mower) {
+	private static void moveDown(Mower mower) {
 		int posY = mower.getPosY();
 
 		if (posY == Surface.MIN_POS_Y) {
@@ -85,7 +85,7 @@ public final class MoveMower {
 		}
 	}
 
-	private void moveLeft(Mower mower) {
+	private static void moveLeft(Mower mower) {
 		int posX = mower.getPosX();
 
 		if (posX == Surface.MIN_POS_X) {
@@ -95,7 +95,7 @@ public final class MoveMower {
 		}
 	}
 
-	private void moveRight(Surface surface, Mower mower) {
+	private static void moveRight(Surface surface, Mower mower) {
 		int posX = mower.getPosX();
 
 		if (posX == surface.getMaxPosX()) {

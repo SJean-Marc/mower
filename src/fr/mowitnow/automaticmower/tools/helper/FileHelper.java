@@ -1,4 +1,4 @@
-package fr.xebia.mowitnow.automaticmower.tools.helper;
+package fr.mowitnow.automaticmower.tools.helper;
 
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 import org.apache.commons.io.FilenameUtils;
 
-import fr.xebia.mowitnow.automaticmower.domain.enums.ExtensionEnum;
+import fr.mowitnow.automaticmower.domain.enums.ExtensionEnum;
 
 /**
  * Classe utilitaire centralisant l'ensemble des fonction pour réaliser des

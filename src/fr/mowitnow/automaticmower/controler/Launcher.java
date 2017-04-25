@@ -1,4 +1,4 @@
-package fr.xebia.mowitnow.automaticmower.controler;
+package fr.mowitnow.automaticmower.controler;
 
 import java.util.Scanner;
 

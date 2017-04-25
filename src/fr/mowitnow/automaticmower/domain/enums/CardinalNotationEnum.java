@@ -1,4 +1,4 @@
-package fr.xebia.mowitnow.automaticmower.domain.enums;
+package fr.mowitnow.automaticmower.domain.enums;
 
 /**
  * Ensemble des lettre indiquant l'orientation selon la notation cardinale

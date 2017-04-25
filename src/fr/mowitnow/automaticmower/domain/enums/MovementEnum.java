@@ -1,4 +1,4 @@
-package fr.xebia.mowitnow.automaticmower.domain.enums;
+package fr.mowitnow.automaticmower.domain.enums;
 
 /**
  * Ensemble des mouvements possible par la tondeuse.

@@ -1,19 +1,20 @@
-package fr.xebia.mowitnow.automaticmower.domain;
+package fr.mowitnow.automaticmower.domain;
 
-import fr.xebia.mowitnow.automaticmower.domain.enums.CardinalNotationEnum;
+import fr.mowitnow.automaticmower.domain.enums.CardinalNotationEnum;
 
 /**
  * Representation objet d'une tondeuse
+ * 
  * @author JM
  *
  */
 public class Mower {
 	/* ********************************************************* */
 	/* ********************************************************* */
-	/* 						Attributs							 */
-	/* ********************************************************* */	
-	/* ********************************************************* */	
-	
+	/* Attributs */
+	/* ********************************************************* */
+	/* ********************************************************* */
+
 	/**
 	 * Chaque surface doit être unique
 	 */
@@ -35,74 +36,88 @@ public class Mower {
 	 * Orientation de la tondeuse sur la surface.
 	 */
 	private CardinalNotationEnum orientation;
-	
+
 	/* ********************************************************* */
 	/* ********************************************************* */
-	/* 						Méthodes							 */
-	/* ********************************************************* */	
-	/* ********************************************************* */	
+	/* Méthodes */
+	/* ********************************************************* */
+	/* ********************************************************* */
 	/**
 	 * Constructeur
 	 */
-	public Mower() {
+	public Mower(int posX, int posY, CardinalNotationEnum orientation) {
 		this.id = commonId;
 		commonId++;
+		
+		//Mise en place des positions
+		this.posX = posX;
+		this.posY = posY;
+		this.orientation = orientation;
 	}
-	
+
 	/* ********************************************************* */
 	/* ********************************************************* */
-	/* 						Accesseurs							 */
-	/* ********************************************************* */	
-	/* ********************************************************* */	
+	/* Accesseurs */
+	/* ********************************************************* */
+	/* ********************************************************* */
 	/**
 	 * @return the id
 	 */
 	public Integer getId() {
 		return id;
 	}
+
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	/**
 	 * @return the posX
 	 */
 	public int getPosX() {
 		return posX;
 	}
+
 	/**
-	 * @param posX the posX to set
+	 * @param posX
+	 *            the posX to set
 	 */
 	public void setPosX(int posX) {
 		this.posX = posX;
 	}
+
 	/**
 	 * @return the posY
 	 */
 	public int getPosY() {
 		return posY;
 	}
+
 	/**
-	 * @param posY the posY to set
+	 * @param posY
+	 *            the posY to set
 	 */
 	public void setPosY(int posY) {
 		this.posY = posY;
 	}
+
 	/**
 	 * @return the orientation
 	 */
 	public CardinalNotationEnum getOrientation() {
 		return orientation;
 	}
+
 	/**
-	 * @param orientation the orientation to set
+	 * @param orientation
+	 *            the orientation to set
 	 */
 	public void setOrientation(CardinalNotationEnum orientation) {
 		this.orientation = orientation;
 	}
-	
-	
 
 }

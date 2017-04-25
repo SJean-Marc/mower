@@ -1,10 +1,10 @@
-package fr.xebia.mowitnow.automaticmower.controler;
+package fr.mowitnow.automaticmower.controler;
 
 import java.util.Queue;
 
-import fr.xebia.mowitnow.automaticmower.tools.helper.CheckMowerFileHelper;
-import fr.xebia.mowitnow.automaticmower.tools.helper.FileHelper;
-import fr.xebia.mowitnow.automaticmower.tools.helper.MowerLogger;
+import fr.mowitnow.automaticmower.tools.helper.CheckMowerFileHelper;
+import fr.mowitnow.automaticmower.tools.helper.FileHelper;
+import fr.mowitnow.automaticmower.tools.helper.MowerLogger;
 
 /**
  * Controleur pour les fonctions métiers de l'application
