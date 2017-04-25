@@ -48,11 +48,19 @@ public class Mower {
 	public Mower(int posX, int posY, CardinalNotationEnum orientation) {
 		this.id = commonId;
 		commonId++;
-		
-		//Mise en place des positions
+
+		// Mise en place des positions
 		this.posX = posX;
 		this.posY = posY;
 		this.orientation = orientation;
+	}
+
+	/**
+	 * Affichage des données de la tondeuse.
+	 */
+	@Override
+	public String toString() {
+		return posX + " " + posY + " " + orientation.name();
 	}
 
 	/* ********************************************************* */

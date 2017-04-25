@@ -11,8 +11,15 @@ import org.apache.commons.lang.StringUtils;
  * @author JM
  *
  */
-public class Launcher {
-
+public final class Launcher {
+	
+	/**
+	 * Constructeur
+	 */
+	private Launcher() {
+		// ne rien faire 
+	}
+	
 	/**
 	 * Fonction main qui demarre le programme
 	 * 
@@ -33,7 +40,7 @@ public class Launcher {
 
 		/* Vérifie que le fichier est correcte,si oui demarre le processus */
 		if (StringUtils.isNotBlank(path)) {
-
+			Application.startMowerApplication(path);
 		}
 	}
 

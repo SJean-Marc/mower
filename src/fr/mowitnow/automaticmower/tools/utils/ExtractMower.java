@@ -1,9 +1,6 @@
 package fr.mowitnow.automaticmower.tools.utils;
 
-import java.util.List;
 import java.util.Queue;
-
-import javax.security.auth.Subject;
 
 import org.apache.commons.lang.math.NumberUtils;
 
@@ -22,7 +19,7 @@ public final class ExtractMower {
 	 * Constructeur
 	 */
 	private ExtractMower() {
-		// ne rien faire
+		// ne rien faire 
 	}
 
 	/**
@@ -83,6 +80,7 @@ public final class ExtractMower {
 			}
 
 			/* Ajout a la liste des tondeuse de */
+			surface.addToMowerList(newMower);
 		}
 
 	}
